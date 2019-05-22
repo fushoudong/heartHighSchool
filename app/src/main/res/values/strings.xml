@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">心域v2.1线性版</string>
+    <string name="app_name_alpha">心域(收集数据版)</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="show">显示</string>
+    <string name="heartrate_unit" translatable="false">bpm</string>
+    <string name="measure_rate_result_error" translatable="false">_ _ _</string>
+
+    <string name="measure_btn_start">Start</string>
+    <string name="measure_btn_save">Save</string>
+    <string name="measure_btn_fail">Retry</string>
+    <string name="history_title">History</string>
+    <string name="fatigue_tip">系统利用心率变异性中交感神经与副交感神经的协调性作为判断用户疲劳度的标准，若疲劳度>80时，应进行适当休息。</string>
+    <string name="heartrate_tip">心率是指正常人安静状态下每分钟心跳的次数，也叫安静心率，一般为60-100次/分，可因年龄、性别或其他生理因素产生个体差异。一般来说，年龄越小，心率越快，老年人心跳比年轻人慢，女性的心率比同龄男性快，这些都是正常的生理现象。安静状态下，成人正常心率为60～100次/分钟，理想心率应为55～70次/分钟。
+</string>
+    <string name="blood_oxy_tip" formatted="false">血氧饱和度(SpO2)是血液中被氧结合的氧合血红蛋白(HbO2)的容量占全部可结合的血红蛋白(Hb，hemoglobin)容量的百分比，即血液中血氧的浓度。一般认为血氧饱和度不应低于94%，低于90%时即为低氧，需进行观察治疗。
+</string>
+    <string name="af_tip" formatted="false">心房颤动是一种常见的快速心律失常，60岁以上的人有1%出现房颤，随着年龄增长发生率成倍增加。其中无器质性心脏病患者占3%-11%。若风险显示为高，应尽快前往医院进行专业检查。</string>
+    <string name="title_activity_questionnaire_survey">questionnaireSurvey</string>
+</resources>

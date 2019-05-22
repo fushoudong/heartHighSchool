@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="view-core-0.1.5">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/458825540744d7d0f03c74906ed07d5debb4659b/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/458825540744d7d0f03c74906ed07d5debb4659b/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.lzy.widget/view-core/0.1.5/157846dcad0afe425e8bd566b60b572f86db9937/view-core-0.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

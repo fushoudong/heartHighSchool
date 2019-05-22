@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\bf7a7cf23021fef7bee9ec007fb6de8e7473cf30\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_669fb5e99c20f879b41332604a74d3a41c7a8bfb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.8.1\bc373fb6bc7bca3035041b924f158fd2b946ee8d\butterknife-annotations-8.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc373fb6bc7bca3035041b924f158fd2b946ee8d">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.8.1_eb2a5f36e1b035c80b77687d8a04028a81b92567\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\458825540744d7d0f03c74906ed07d5debb4659b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e921a3b8710529539fce1fef812f9626d8a6ecdb">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dfbd3e2434a09b9f5292b604fd7b2f279d011b01\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_b8946d7ce683b67247c2bb296d9684ac6065ab03\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\NewHeartArea\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a9747be054be3482071467d80f1f891abffc4d37">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e03993aedb4a3cfb5450fd316d170af2e060f323\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\94ea3cff209d222aa2e04cfb84a0037dbb4e087f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4f6ec59e072a10cce4b3bbe7e0a91c6770125139\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.squareup\javapoet\1.9.0\ecc5cf9c221d55481163e773b24336db149e51\javapoet-1.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00ecc5cf9c221d55481163e773b24336db149e51">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\javapoet-1.9.0_ecf76a3a3c2b5a88a67716f551ced958a04bba0d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\NewHeartArea\app\libs\lemon-hello.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dddbf957878750ba80d7326e06f5556b882261f9">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\2\lemon-hello_f743b18dcee2fdfcd6bf35d856636094bda7bfd9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\NewHeartArea\app\libs\achartengine-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b2bb0af9f390c0edd4d7d95f613f38da3abe0144">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\2\achartengine-1.0.0_91152c0172ca1fee3be245a71d10973bb68905b9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\842e9122922a1dad492a40d892dff573b7f02312\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_32886da86383a6ed7c2a43b93fae2416804a711b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\74ab246759e0c3db8b4c8d63e932c942c3dd1927\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6f698b555f3496c660532c7bce6674c944d379f7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.4\695b63d702f505b9b916e02272e3b6381bade7f\gson-2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.4_0736137f6576f5c5d6e807381aa76352a60ec775\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\NewHeartArea\app\libs\volley.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a94601db9bdfb7dc60efabb3dea91a0675f591d">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\2\volley_9ffca2b01b05a1efe59914fa98a9aecd35dde1d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-scalars\2.0.0-beta4\f8685e25bc7f076913e2b51996cbc19ef7eb05df\converter-scalars-2.0.0-beta4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f8685e25bc7f076913e2b51996cbc19ef7eb05df">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-scalars-2.0.0-beta4_d193394c94aeeb913e67563fa72323b2840743ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\08f42a5cf14ce503cba6b280e8fa49535521a2a0\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_15b0073ce5ddda1552a7781005ec6208d13faed6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\NewHeartArea\app\libs\lemon-bubble.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7569cf0041f5578f8985c07f88bd1af32676e4f3">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\2\lemon-bubble_8474b52b8bea16729ceba5267e2725f1381cfb71\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.13.0_e77f48d9a9980d68564c276a88b0e7742221e71a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\c94f7861d9c31ae0b78ef3a1f3acd6a78f4d1919\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1d6d13c2a692b310c56645866ec8ab96a6e93c4e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.3.0\bcacde6a8ccedcc56c127403d26b76072fe6214d\retrofit-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bcacde6a8ccedcc56c127403d26b76072fe6214d">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.3.0_553cee753076a4ba5fbe93c63a2ea58d638b5bad\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\19.0\6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9\guava-19.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\guava-19.0_1885dbb9830c9250d3d4700aafbef724ebb55d2e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\194fe35d08c86a52de80634f67ad3d7991a8d847\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_be2cd5197b75e7d2952bf6668094c096d93c5401\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\fe994495617e830323db53b20bfd6a2bf9e8debe\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_622bd1a2cba3fe12b56d5d6e80ca241aee3dd942\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\78f1d8effb079b9432e51a70b3d402d3baf7e7fc\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_27b478ae49d146abb9d6e82c9e341ab26967d4a7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-compiler\8.8.1\b2f4505a1babb7b7c11abbbf8ea4c90b18c3aeac\butterknife-compiler-8.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b2f4505a1babb7b7c11abbbf8ea4c90b18c3aeac">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-compiler-8.8.1_af87bafcca74642910b887d2dac7f80a177d1e39\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\700ae45a2199690823e6ea5c9b4054d6b7a8d3d2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d0d963389087a1a1e15acbe0bb7a621b58a73c54\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\698edd148b164227ce1671751ce9c512368d9bd1\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e57c1efad6681373dca399e357451c309ce2a287\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\e8e4ed7afc3f8f2e0d002df6752da4d6c20d0608\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d9503bb0faab691a3f39fbf71d58df58a7552c6a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\454b65792252b9fe5e9fbae6e392dc9342aea894\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a65b4007c4d0a67ee23856bb6bfa212c1079dd7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\e546f0e2ceca70b918552bf0249671f1b8bc45c6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ba243e0cef4e6d13ce463d04026c06fe18297a18\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\NewHeartArea\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_dd99afb33c16fd68f1750a14511d39555400e35c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.google.auto\auto-common\0.8\c6f7af0e57b9d69d81b05434ef9f3c5610d498c4\auto-common-0.8.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c6f7af0e57b9d69d81b05434ef9f3c5610d498c4">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\auto-common-0.8_e5a45cc93107078ace745c9d93821fec6148bc0c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.android\build-cache\0f1537175f3fa8f4f176f3516d3b9e41fa0bae40\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6a2bcb61342d09fe9acf55c9daf63961c8866cc0">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9a0bcfb659340df3772d1f3cd383539632aef14d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\NewHeartArea\app\libs\Jama-1.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4e7b3b81770450a21b4295e27c2ccb802ab537e1">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\2\Jama-1.0.3_f2473607379c2ab17c90bba464e9dc74b927a34b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.0-beta4\de5935a367ba5e343e9df786ac8fc0c7d52b5f0c\converter-gson-2.0.0-beta4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="de5935a367ba5e343e9df786ac8fc0c7d52b5f0c">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.0-beta4_88d782246fc3b7981da6e1933047e9319f6f0b23\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.8.0\5a11f020cce2d11eb71ba916700600e18c4547e7\okhttp-3.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5a11f020cce2d11eb71ba916700600e18c4547e7">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.8.0_187eee4eafcabc819cb045d29a91d12ad1bee0d1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\NewHeartArea\app\libs\commons-math-2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4877b85d388275f994a5cfc7eceb73a8045d3006">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\2\commons-math-2.2_b0e95b50f10873d6ffc0a810584ae0259f775440\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_8eb3ad97e018d4376d2cf80553e0acc3bc04eac0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\zlx\AppData\Local\Android\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\NewHeartArea\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_80c285c250a5c4ff1f62c5e41a9c2f8b2913a158\classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4F4EC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvFatigueTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="疲劳度"
+                android:textColor="@color/text_green"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ivFatigueTip"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tvFatigueTitle"
+                android:src="@drawable/question" />
+
+            <ImageView
+                android:id="@+id/ivCamera"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/camera"/>
+
+        </RelativeLayout>
+
+        <com.bupt.heartarea.ui.CircleIndicator
+            android:id="@+id/ci_1"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tvFatigueTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/fatigue_tip"
+            android:textColor="@color/text_black"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="血压值"
+            android:textColor="@color/text_green"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.bupt.heartarea.ui.NumberAnimTextView
+                android:id="@+id/animtv_blood_presssure_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textSize="24sp" />
+
+            <com.bupt.heartarea.ui.NumberAnimTextView
+                android:id="@+id/animtv_blood_presssure_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvHeartRateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="心率值"
+                android:textColor="@color/text_green"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ivHeartRateTip"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tvHeartRateTitle"
+                android:src="@drawable/question" />
+        </RelativeLayout>
+
+        <com.bupt.heartarea.ui.LineIndicator
+            android:id="@+id/li_progress_heart_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+        <TextView
+            android:id="@+id/tvHeartRateTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/heartrate_tip"
+            android:textColor="@color/text_black"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvBloodOxyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="血氧值"
+                android:textColor="@color/text_green"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ivBloodOxyTip"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tvBloodOxyTitle"
+                android:src="@drawable/question" />
+        </RelativeLayout>
+
+        <com.bupt.heartarea.ui.LineIndicator
+            android:id="@+id/li_progress_blood_oxygen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+        <TextView
+            android:id="@+id/tvBloodOxyTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/blood_oxy_tip"
+            android:textColor="@color/text_black"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAfTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="房颤指数"
+                android:textColor="@color/text_green"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ivAfTip"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tvAfTitle"
+                android:src="@drawable/question" />
+        </RelativeLayout>
+
+        <com.zhouyou.view.segmentedbar.RectThumbSegmentedBarView
+            android:id="@+id/rtsbv_af"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:sbv_bar_height="15dp"
+            app:sbv_description_box_height="35dp"
+            app:sbv_description_highlight_text_color="#461d18"
+            app:sbv_description_text_color="#c5bfbf"
+            app:sbv_description_text_size="14sp"
+            app:sbv_segment_bg="false"
+            app:sbv_segment_gap_width="0dp"
+            app:sbv_segment_rule="average"
+            app:sbv_show_description_text="true"
+            app:sbv_show_segment_text="false"
+            app:sbv_side_style="normal"
+            app:sbv_sliderType="Custom"
+            app:sbv_thumb_h="30dp"
+            app:sbv_thumb_w="34dp"
+            />
+
+        <TextView
+            android:id="@+id/tvAfTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/af_tip"
+            android:textColor="@color/text_black"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_result_feedback_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="疲劳度是否符合您当前真实状态"
+                android:textColor="@color/text_green"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_result_yes"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_login"
+                    android:text="准确"
+                    android:textColor="@color/text_green" />
+
+                <Button
+                    android:id="@+id/btn_result_no"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_no"
+                    android:text="不准确"
+                    android:textColor="@color/text_red" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
