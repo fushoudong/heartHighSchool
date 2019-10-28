@@ -1,7 +1,11 @@
 package com.bupt.heartarea.utils;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by yuqing on 2017/2/16.
@@ -29,7 +33,7 @@ public class CalHeartRate {
                     && datas[i] > datas[i + 5]
                     && datas[i] > datas[i + 6]
                     && datas[i] > datas[i + 7]
-                    ) {
+            ) {
                 if (i - last_index > 10) {
                     list.add(i);
                     last_index = i;
@@ -69,7 +73,9 @@ public class CalHeartRate {
         List<Integer> indMax = new ArrayList<Integer>();
         int length = datas.length;
         for (int i = 1; i < length - 8; i++) {
-            if (datas[i] > datas[i - 1] && datas[i] > datas[i + 1] && datas[i] > datas[i + 2] && datas[i] > datas[i + 3] && datas[i] > datas[i + 4] && datas[i] > datas[i + 5] && datas[i] > datas[i + 6] && datas[i] > datas[i + 7]) {
+            if (datas[i] > datas[i - 1] && datas[i] > datas[i + 1] && datas[i] > datas[i + 2] &&
+                    datas[i] > datas[i + 3] && datas[i] > datas[i + 4] && datas[i] > datas[i + 5] &&
+                    datas[i] > datas[i + 6] && datas[i] > datas[i + 7]) {
                 list.add(i);
             }
         }
@@ -223,6 +229,7 @@ public class CalHeartRate {
                 int abs = Math.abs(rr.get(i) - average);
                 if (abs < 200) {
                     removalList.add(rr.get(i));
+                    Log.e(TAG, "removalRRList: " +rr.get(i));
                 }
             }
         }

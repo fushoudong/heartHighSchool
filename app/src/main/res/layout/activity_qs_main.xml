@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:background="@drawable/back_top"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip">
+            <ImageView
+                android:layout_width="60.0dip"
+                android:layout_height="wrap_content"
+                android:src="@drawable/h" />
+            <TextView
+                android:textSize="20.0sp"
+                android:textColor="@android:color/white"
+                android:id="@+id/tv_main_title_qs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0.0dip"
+                android:text="基本信息情况" />
+        </LinearLayout>
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginBottom="4.0dip">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="#ff000000"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="编号："
+                        android:layout_weight="2.0"/>
+                    <EditText
+                        android:textSize="18.0sp"
+                        android:textColor="#ff000000"
+                        android:id="@+id/et_id"
+                        android:background="@drawable/edit_bg"
+                        android:layout_width="0.0dip"
+                        android:layout_height="35.0dip"
+                        android:hint="请填写您的编号"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/darker_gray"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginBottom="4.0dip">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="#ff000000"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="姓名："
+                        android:layout_weight="2.0" />
+                    <EditText
+                        android:textSize="18.0sp"
+                        android:textColor="#ff000000"
+                        android:id="@+id/et_name"
+                        android:background="@drawable/edit_bg"
+                        android:layout_width="0.0dip"
+                        android:layout_height="35.0dip"
+                        android:hint="请填写您的姓名"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/darker_gray"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginBottom="4.0dip">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="#ff000000"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="性别："
+                        android:layout_weight="2.0" />
+                    <RadioGroup
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5.0">
+                        <RadioButton
+                            android:textColor="#ff000000"
+                            android:id="@+id/rb_boy"
+                            android:layout_width="100.0dip"
+                            android:layout_height="wrap_content"
+                            android:text="男" />
+                        <RadioButton
+                            android:textColor="#ff000000"
+                            android:id="@+id/rb_girl"
+                            android:layout_width="100.0dip"
+                            android:layout_height="wrap_content"
+                            android:text="女" />
+                    </RadioGroup>
+                </LinearLayout>
+                <View
+                    android:background="@android:color/darker_gray"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginBottom="4.0dip">
+                <TextView
+                    android:textSize="20.0sp"
+                    android:textColor="#ff000000"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="年龄："
+                    android:layout_weight="2.0"
+                    />
+                <EditText
+                    android:textSize="18.0sp"
+                    android:textColor="#ff000000"
+                    android:id="@+id/et_age"
+                    android:background="@drawable/edit_bg"
+                    android:layout_width="0.0dip"
+                    android:layout_height="35.0dip"
+                    android:hint="请填写您的年龄"
+                    android:layout_weight="5.0"
+                    />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/darker_gray"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginBottom="4.0dip">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="#ff000000"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="电话："
+                        android:layout_weight="2.0" />
+                    <EditText
+                        android:textSize="18.0sp"
+                        android:textColor="#ff000000"
+                        android:id="@+id/et_tel"
+                        android:background="@drawable/edit_bg"
+                        android:layout_width="0.0dip"
+                        android:layout_height="35.0dip"
+                        android:hint="请填写您的电话"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/darker_gray"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginBottom="4.0dip">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="#ff000000"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="住址："
+                        android:layout_weight="2.0" />
+                    <EditText
+                        android:textSize="18.0sp"
+                        android:textColor="#ff000000"
+                        android:id="@+id/et_address"
+                        android:background="@drawable/edit_bg"
+                        android:layout_width="0.0dip"
+                        android:layout_height="35.0dip"
+                        android:hint="请填写您的家庭住址"
+                        android:layout_weight="5.0" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/darker_gray"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginBottom="4.0dip">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="#ff000000"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="合并疾病："
+                        android:layout_weight="2.0" />
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="240.0dip"
+                        android:layout_height="wrap_content">
+                        <CheckBox
+                            android:textColor="#ff000000"
+                            android:id="@+id/cb_diabetes"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:text="糖尿病"
+                            android:layout_weight="1.0" />
+                        <CheckBox
+                            android:textColor="#ff000000"
+                            android:id="@+id/high_blood_pressure"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:text="高血压"
+                            android:layout_weight="1.0" />
+                    </RadioGroup>
+                </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:layout_marginTop="5.0dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip">
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@+id/ll_general_info"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0">
+                        <TextView
+                            android:textSize="20.0sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginBottom="5.0dip"
+                            android:text="一般情况"
+                            android:layout_weight="1.0" />
+                        <View
+                            android:background="@color/line"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dip" />
+                        <TextView
+                            android:textSize="17.0sp"
+                            android:textColor="@android:color/black"
+                            android:id="@+id/tv_status1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginTop="5.0dip"
+                            android:text="未填写"
+                            android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@+id/ll_medication"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0">
+                        <TextView
+                            android:textSize="20.0sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginBottom="5.0dip"
+                            android:text="用药情况"
+                            android:layout_weight="1.0" />
+                        <View
+                            android:background="@color/line"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dip" />
+                        <TextView
+                            android:textSize="17.0sp"
+                            android:textColor="@android:color/black"
+                            android:id="@+id/tv_status2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginTop="5.0dip"
+                            android:text="未填写"
+                            android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@+id/ll_danger"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0">
+                        <TextView
+                            android:textSize="20.0sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginBottom="5.0dip"
+                            android:text="危险因素"
+                            android:layout_weight="1.0" />
+                        <View
+                            android:background="@color/line"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dip" />
+                        <TextView
+                            android:textSize="17.0sp"
+                            android:textColor="@android:color/black"
+                            android:id="@+id/tv_status3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginTop="5.0dip"
+                            android:text="未填写"
+                            android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip">
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:background="@color/line"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0">
+                        <TextView
+                            android:textSize="17.0sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/life" />
+                    </LinearLayout>
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@+id/ll_life"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0">
+                        <TextView
+                            android:textSize="20.0sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginBottom="5.0dip"
+                            android:text="问卷得分"
+                            android:layout_weight="1.0" />
+                        <View
+                            android:background="@color/line"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dip" />
+                        <TextView
+                            android:textSize="17.0sp"
+                            android:textColor="@android:color/black"
+                            android:id="@+id/tv_status4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginTop="5.0dip"
+                            android:text="未填写"
+                            android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@+id/ll_self_anxiety_activity"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0">
+                        <TextView
+                            android:textSize="20.0sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginBottom="5.0dip"
+                            android:text="焦虑得分"
+                            android:layout_weight="1.0" />
+                        <View
+                            android:background="@color/line"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dip" />
+                        <TextView
+                            android:textSize="17.0sp"
+                            android:textColor="@android:color/black"
+                            android:id="@+id/tv_status5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginTop="5.0dip"
+                            android:text="未填写"
+                            android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip" />
+                <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip">
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:background="@color/line"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0">
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="焦虑量表" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:id="@+id/ll_anxiety"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0.0dip"
+                        android:layout_marginBottom="5.0dip"
+                        android:text="SAS"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dip" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/tv_status6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0.0dip"
+                        android:layout_marginTop="5.0dip"
+                        android:text="未填写"
+                        android:layout_weight="1.0" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:id="@+id/ll_sleep"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0.0dip"
+                        android:layout_marginBottom="5.0dip"
+                        android:text="睡眠质量"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dip" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/tv_status7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0.0dip"
+                        android:layout_marginTop="5.0dip"
+                        android:text="未填写"
+                        android:layout_weight="1.0" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70.0dip">
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:background="@color/line"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0">
+                        <TextView
+                            android:textSize="17.0sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="症状自评量表" />
+                    </LinearLayout>
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@+id/ll_self"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0">
+                        <TextView
+                            android:textSize="20.0sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginBottom="5.0dip"
+                            android:text="SCL-90"
+                            android:layout_weight="1.0" />
+                        <View
+                            android:background="@color/line"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dip" />
+                        <TextView
+                            android:textSize="18.0sp"
+                            android:textColor="@android:color/black"
+                            android:id="@+id/tv_status8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0.0dip"
+                            android:layout_marginTop="5.0dip"
+                            android:text="未填写"
+                            android:layout_weight="1.0" />
+                    </LinearLayout>
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip" />
+                <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip">
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent"/>
+                <TextView
+                    android:textSize="17.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="六分钟距离"
+                    android:layout_weight="1.0" />
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+                <TextView
+                    android:textSize="17.0sp"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/tv_step_number_result"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="还未测量"
+                    android:layout_weight="1.0" />
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+            </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:id="@+id/ll_expand_title"
+                        android:background="#ff63a90a"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40.0dip">
+                        <TextView
+                            android:textSize="18.0sp"
+                            android:textColor="#ffffffff"
+                            android:id="@+id/tv_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="点击向下展开开始六分钟计步" />
+                        <ImageView
+                            android:id="@+id/iv_state"
+                            android:layout_width="15.0dip"
+                            android:layout_height="15.0dip"
+                            android:layout_marginLeft="2.0dip" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:id="@+id/expand"
+                        android:visibility="gone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <include
+                            layout="@layout/layout_expand_step" />
+                    </LinearLayout>
+             </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@android:color/holo_green_light"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:windowSoftInputMode="adjustResize|stateVisible">
+            <Button
+                android:textSize="22.0sp"
+                android:textColor="@android:color/white"
+                android:id="@+id/bt_commit_main"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提交问卷" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

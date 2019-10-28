@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:gravity="center"
+        android:background="@drawable/back_other"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip">
+        <ImageView
+            android:id="@+id/iv_medication_back"
+            android:layout_width="50.0dip"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back1" />
+        <TextView
+            android:textSize="25.0sp"
+            android:textColor="@android:color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:text="用药信息" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="22.0sp"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:text="根据实际情况填写您的用药信息" />
+    </LinearLayout>
+    <View
+        android:background="@android:color/darker_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6.0dip"
+        android:layout_marginBottom="6.0dip">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20.0sp"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:text="1、长期规范使用阿司匹林（n）" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="200.0dip"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:id="@+id/btn_medication_yes1"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                    android:layout_weight="1.0" />
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:id="@+id/btn_medication_no1"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="否"
+                    android:layout_weight="1.0" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:background="@android:color/darker_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6.0dip"
+        android:layout_marginBottom="6.0dip">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20.0sp"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:text="2、长期规范使用氯吡格雷（n）" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="200.0dip"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:id="@+id/btn_medication_yes2"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                    android:layout_weight="1.0" />
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:id="@+id/btn_medication_no2"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="否"
+                    android:layout_weight="1.0" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:background="@android:color/darker_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6.0dip"
+        android:layout_marginBottom="6.0dip">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20.0sp"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:text="3、长期使用B阻滞剂（n）" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="200.0dip"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:id="@+id/btn_medication_yes3"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                    android:layout_weight="1.0" />
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:id="@+id/btn_medication_no3"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="否"
+                    android:layout_weight="1.0" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:background="@android:color/darker_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6.0dip"
+        android:layout_marginBottom="6.0dip">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20.0sp"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:text="4、长期规范使用ACEI/ARB（n）" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="200.0dip"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:id="@+id/btn_medication_yes4"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                    android:layout_weight="1.0" />
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:id="@+id/btn_medication_no4"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="否"
+                    android:layout_weight="1.0" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:background="@android:color/darker_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6.0dip"
+        android:layout_marginBottom="6.0dip">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20.0sp"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:text="5、长期规范使用他汀类（n）" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="200.0dip"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:id="@+id/btn_medication_yes5"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                    android:layout_weight="1.0" />
+                <RadioButton
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:id="@+id/btn_medication_no5"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="否"
+                    android:layout_weight="1.0" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:background="@android:color/darker_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip" />
+    <LinearLayout
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <View
+            android:background="@android:color/darker_gray"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip" />
+        <Button
+            android:textSize="20.0sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:id="@+id/bt_medication_commit"
+            android:background="@android:color/transparent"
+            android:layout_width="fill_parent"
+            android:layout_height="35.0dip"
+            android:text="提交" />
+    </LinearLayout>
+</LinearLayout>

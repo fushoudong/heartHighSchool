@@ -34,6 +34,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bupt.heartarea.activity.SelectActivity;
 import com.bupt.heartarea.activity.WebActivity;
 import com.bupt.heartarea.bean.ResponseBean;
 import com.bupt.heartarea.bean.Result2;
@@ -97,6 +98,7 @@ public class MainPageFragment extends Fragment implements OnClickListener {
     private LinearLayout mLlNews1, mLlNews2, mLlNews3;
     private LinearLayout mLlDuxin;
     private LinearLayout mLlSign;
+    private LinearLayout mLlQuestion;
     private TextView mTvNews1, mTvNews2, mTvNews3;
     private int mId;
 
@@ -187,7 +189,14 @@ public class MainPageFragment extends Fragment implements OnClickListener {
 
             }
         });
-
+        mLlQuestion = (LinearLayout) view.findViewById(R.id.ll_question);
+        mLlQuestion.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SelectActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // 第一步：初始化ViewPager
         viewPager = (ViewPager) view.findViewById(R.id.vp_advertise);

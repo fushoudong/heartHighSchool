@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:gravity="center"
+        android:background="@drawable/back_other"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip">
+        <ImageView
+            android:id="@+id/iv_hama_back"
+            android:layout_width="50.0dip"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back1" />
+        <TextView
+            android:textSize="25.0sp"
+            android:textColor="@android:color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:text="HAMA焦虑评分量表" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="22.0sp"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:text="根据实际情况填写" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety1" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety11"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety12"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety13"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety14"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety15"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety2" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety21"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety22"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety23"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety24"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety25"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety3" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety31"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety32"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety33"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety34"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety35"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety4" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety41"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety42"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety43"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety44"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety45"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety5" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety51"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety52"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety53"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety54"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety55"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety6" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety61"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety62"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety63"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety64"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety65"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety7" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety71"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety72"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety73"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety74"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety75"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety8" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety81"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety82"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety83"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety84"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety85"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety9" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety91"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety92"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety93"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety94"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety95"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety10" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety101"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety102"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety103"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety104"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety105"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety11" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety111"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety112"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety113"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety114"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety115"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety12" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety121"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety122"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety123"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety124"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety125"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety13"
+                        android:textColor="@android:color/black"
+                        android:textSize="20.0sp" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety131"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety132"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety133"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety134"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety135"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/HAMA_anxiety14" />
+                </LinearLayout>
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:id="@+id/anxiety141"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:id="@+id/anxiety142"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="轻"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:id="@+id/anxiety143"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="中等"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:id="@+id/anxiety144"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="重"
+                        android:layout_weight="1.0" />
+                    <RadioButton
+                        android:textSize="18.0sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:id="@+id/anxiety145"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="极重"
+                        android:layout_weight="1.0" />
+                </RadioGroup>
+            </LinearLayout>
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+            <LinearLayout
+                android:gravity="bottom"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <Button
+                    android:textSize="20.0sp"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:id="@+id/btn_hama_commit"
+                    android:background="@android:color/transparent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35.0dip"
+                    android:text="提交" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

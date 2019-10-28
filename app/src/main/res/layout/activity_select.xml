@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@drawable/green"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="22.0sp"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:text="选择调查时间" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/ll_after_one_week"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+        <LinearLayout
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:layout_width="200.0dip"
+            android:layout_height="60.0dip">
+            <TextView
+                android:textSize="22.0sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_blue_bright"
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第一个月" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/ll_after_four_week"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+        <LinearLayout
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:layout_width="200.0dip"
+            android:layout_height="60.0dip">
+
+            <TextView
+                android:textSize="22.0sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第二个月" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/ll_after_eight_week"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+        <LinearLayout
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:layout_width="200.0dip"
+            android:layout_height="60.0dip">
+            <TextView
+                android:textSize="22.0sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_purple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第三个月" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/ll_after_twelve_week"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+        <LinearLayout
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:layout_width="200.0dip"
+            android:layout_height="60.0dip">
+            <TextView
+                android:textSize="22.0sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第四个月" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

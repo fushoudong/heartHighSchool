@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center"
+            android:background="@drawable/back_other"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip">
+            <ImageView
+                android:id="@+id/iv_sleep_quality"
+                android:layout_width="50.0dip"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back1" />
+            <TextView
+                android:textSize="25.0sp"
+                android:textColor="@android:color/white"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:text="匹兹堡睡眠质量调查" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2.0dip">
+                <TextView
+                    android:textSize="20.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/PSQI_main" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff708090"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.0dip"
+                        android:text="1. 近1个月，晚上上床睡觉通常在" />
+                    <EditText
+                        android:textSize="13.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center"
+                        android:id="@+id/et_in1"
+                        android:background="@drawable/edit_bg"
+                        android:paddingBottom="0.0dip"
+                        android:layout_width="50.0dip"
+                        android:layout_height="20.0dip" />
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff708090"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.0dip"
+                        android:text="点钟" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff708090"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.0dip"
+                        android:text="2. 近1个月，从上床到入睡通常需要" />
+
+                    <EditText
+                        android:id="@+id/et_in2"
+                        android:layout_width="50.0dip"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/edit_bg"
+                        android:paddingBottom="0.0dip"
+                        android:textColor="@android:color/black"
+                        android:textSize="13.0sp" />
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff708090"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.0dip"
+                        android:text="分钟" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff708090"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.0dip"
+                        android:text="3. 近1个月，通常早上" />
+                    <EditText
+                        android:textSize="13.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center"
+                        android:id="@+id/et_in3"
+                        android:background="@drawable/edit_bg"
+                        android:paddingBottom="0.0dip"
+                        android:layout_width="50.0dip"
+                        android:layout_height="20.0dip" />
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff708090"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.0dip"
+                        android:text="点起床" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff708090"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.0dip"
+                        android:text="4. 近1个月，每夜通常实际睡眠" />
+                    <EditText
+                        android:textSize="13.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center"
+                        android:id="@+id/et_in4"
+                        android:background="@drawable/edit_bg"
+                        android:paddingBottom="0.0dip"
+                        android:layout_width="50.0dip"
+                        android:layout_height="20.0dip" />
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff708090"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25.0dip"
+                        android:text="h (非卧床)" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip">
+                <TextView
+                    android:textSize="18.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="对下列问题请选择1个最适合您的答案。 " />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip">
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="#ff708090"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5. 近1个月 ，因下列情况影响睡眠而烦恼： " />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="a. 入睡困难(30分钟内不能入睡)" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5a1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5a2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5a3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5a4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="b. 夜间易醒或早醒" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5b1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5b2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5b3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5b4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="c. 夜间去厕所" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5c1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5c2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5c3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5c4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="d. 呼吸不畅" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5d1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5d2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5d3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5d4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="e. 咳嗽或鼾声高" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5e1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5e2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5e3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5e4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="f. 感觉冷" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5f1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5f2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5f3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5f4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="g. 感觉热" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5g1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5g2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5g3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5g4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="h. 做恶梦" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5h1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5h2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5h3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5h4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="i. 疼痛不适" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5i1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5i2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5i3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5i4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3.0dip"
+                            android:layout_marginTop="3.0dip"
+                            android:text="j. 其它影响睡眠的事情" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5j1"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5j2"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5j3"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_5j4"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1.0dip">
+                <TextView
+                    android:textSize="18.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:text="如有，请说明：" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip">
+                        <TextView
+                            android:textSize="16.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5.0dip"
+                            android:text="6. 近1个月，总的来说，您认为己的睡眠质量" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_61"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="很好"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_62"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="较好"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_63"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="较差"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_64"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="很差"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip">
+                        <TextView
+                            android:textSize="16.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5.0dip"
+                            android:text="7. 近1个月，您用药物催眠的情况" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_71"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_72"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_73"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_74"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip">
+                        <TextView
+                            android:textSize="16.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5.0dip"
+                            android:text="8. 近1个月，您常感到困倦吗" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_81"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_82"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_83"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_84"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip">
+                        <TextView
+                            android:textSize="16.0sp"
+                            android:textColor="#ff708090"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5.0dip"
+                            android:text="9. 近1个月，您做事情的精力不足吗" />
+                        <RadioGroup
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_green_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_91"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="无"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_blue_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_92"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="14.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_orange_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_93"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="1-2次/周"
+                                android:layout_weight="1.0" />
+                            <RadioButton
+                                android:textSize="15.0sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:id="@+id/rb_pittsburgh_sleep_quality_index_94"
+                                android:layout_width="0.0dip"
+                                android:layout_height="wrap_content"
+                                android:text="≥3次/周"
+                                android:layout_weight="1.0" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="@android:color/black"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:text="睡眠质量得分"
+                        android:layout_weight="2.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="0.5dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:id="@+id/tv_sleep_quality"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:text="入睡时间得分"
+                        android:layout_weight="2.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="0.5dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:id="@+id/tv_sleep_in_time"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@android:color/black"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:text="睡眠时间得分"
+                        android:layout_weight="2.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="0.5dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:id="@+id/tv_sleep_time"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.5dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:text="睡眠效率得分"
+                        android:layout_weight="2.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="0.5dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:id="@+id/tv_sleep_xiaolv"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@android:color/black"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:text="睡眠障碍得分"
+                        android:layout_weight="2.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="0.5dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:id="@+id/tv_sleep_zhangai"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:text="催眠药物得分"
+                        android:layout_weight="2.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="0.5dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:id="@+id/tv_sleep_medication"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@android:color/black"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:text="日间功能障碍得分"
+                        android:layout_weight="2.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="0.5dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:id="@+id/tv_sleep_day"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@android:color/black"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="16.0sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:text="PSQI总分"
+                        android:layout_weight="2.0" />
+                    <View
+                        android:background="@color/line"
+                        android:layout_width="0.5dip"
+                        android:layout_height="fill_parent" />
+                    <TextView
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:id="@+id/tv_sleep_final"
+                        android:layout_width="0.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_weight="1.0" />
+                    <View
+                        android:background="@android:color/black"
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@android:color/black"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:background="@color/line"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+                <Button
+                    android:textSize="22.0sp"
+                    android:textColor="@android:color/holo_green_light"
+                    android:id="@+id/btn_calc"
+                    android:background="@color/bg_login"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="计算得分"
+                    android:layout_weight="1.0" />
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="0.5dip"
+                    android:layout_height="fill_parent" />
+                <Button
+                    android:textSize="22.0sp"
+                    android:textColor="@color/blue"
+                    android:id="@+id/btn_slepp_quality_commit"
+                    android:background="@color/bg_login"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="提交"
+                    android:layout_weight="1.0" />
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+            </LinearLayout>
+            <View
+                android:background="@android:color/black"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

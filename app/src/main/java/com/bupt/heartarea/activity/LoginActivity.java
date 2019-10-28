@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -41,6 +44,7 @@ public class LoginActivity extends Activity {
     private String str_name;
     private String str_pwd;
     private String str_json;
+    private Handler handler = new Handler();
 
     // 对端口号和URI的定义
     private static final String URL_LOGIN = GlobalData.URL_HEAD + "/detect3/LoginServlet";
@@ -61,6 +65,36 @@ public class LoginActivity extends Activity {
 
         et_login_username = (EditText) findViewById(com.bupt.heartarea.R.id.et_login_username);
         et_login_password = (EditText) findViewById(com.bupt.heartarea.R.id.et_login_password);
+        final Runnable loginDelay = new Runnable() {
+            @Override
+            public void run() {
+                if (et_login_username.getText().toString().trim().equals("")){
+                    Toast.makeText(LoginActivity.this,"请输入账号", Toast.LENGTH_SHORT).show();
+                }else if (!et_login_username.getText().toString().toString().matches("1[13578]\\d{9}")){
+                    Toast.makeText(LoginActivity.this,"账号格式不正确",Toast.LENGTH_SHORT).show();
+                }else {
+                    str_name = et_login_username.getText().toString().trim();
+                    str_pwd = et_login_password.getText().toString().trim();
+                    login();
+                }
+            }
+        };
+
+        et_login_password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (loginDelay!= null){
+                    handler.removeCallbacks(loginDelay);
+                }
+                handler.postDelayed(loginDelay,1000);
+            }
+        });
 
         // 在布局文件中捕获Id为btn_login_yes的Button控件，并创建Button控件实例
         btn_login_yes = (Button) findViewById(com.bupt.heartarea.R.id.btn_login_yes);
@@ -77,10 +111,7 @@ public class LoginActivity extends Activity {
                             Toast.LENGTH_LONG).show();
                 } else {
                     login();
-
                 }
-
-
             }
         });
         btn_login_register = (Button) findViewById(com.bupt.heartarea.R.id.btn_login_register);
@@ -115,7 +146,6 @@ public class LoginActivity extends Activity {
 
     void login() {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-
 
         //将JSONObject作为，将上一步得到的JSONObject对象作为参数传入
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN,
@@ -197,8 +227,6 @@ public class LoginActivity extends Activity {
                                     startActivity(intent);
                                 }
                                 finish();
-
-
                             }
                         } else {
                             Toast.makeText(LoginActivity.this, "连接服务器失败，请检查网络", Toast.LENGTH_SHORT).show();

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:background="@android:color/holo_blue_light"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/v_top"
+            android:background="@android:color/black"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip" />
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v_top">
+            <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:id="@+id/tv_hour"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+            <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:id="@+id/tv_com"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/maohao" />
+            <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:id="@+id/tv_minute"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+            <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/maohao" />
+            <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:id="@+id/tv_second"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+            <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/point" />
+            <TextView
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:id="@+id/tv_m_second"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+        </LinearLayout>
+        <View
+            android:id="@+id/v_bottom"
+            android:background="@android:color/black"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_below="@+id/ll_top" />
+        <TextView
+            android:textSize="25.0sp"
+            android:textStyle="bold"
+            android:textColor="#ff008000"
+            android:id="@+id/tv_home_page"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前步数：1000"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_main_top"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_below="@+id/v_bottom">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/ll_insert"
+                android:layout_width="0.0dip"
+                android:layout_height="40.0dip"
+                android:layout_marginTop="5.0dip"
+                android:layout_weight="7.0" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/ll_send"
+                android:layout_width="0.0dip"
+                android:layout_height="40.0dip"
+                android:layout_weight="3.0">
+                <Button
+                    android:textSize="20.0sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff000000"
+                    android:id="@+id/bt_send"
+                    android:background="@android:color/transparent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="send" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="top"
+            android:orientation="horizontal"
+            android:id="@+id/ll_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_main_top"
+            android:layout_centerInParent="true">
+<!--            <com.littlejie.circleprogress.DialProgress-->
+<!--                android:id="@+id/dial_progress_bar_main"-->
+<!--                android:padding="10.0dip"-->
+<!--                android:layout_width="220.0dip"-->
+<!--                android:layout_height="220.0dip"-->
+<!--                app:animTime="1000"-->
+<!--                app:arcColors="@array/gradient_arc_color"-->
+<!--                app:arcWidth="@dimen/large"-->
+<!--                app:hint="步数"-->
+<!--                app:hintSize="20.0sp"-->
+<!--                app:maxValue="10000.0"-->
+<!--                app:startAngle="135.0"-->
+<!--                app:sweepAngle="270.0"-->
+<!--                app:unit="目标步数：10000"-->
+<!--                app:unitSize="15.0sp"-->
+<!--                app:value="7000.0"-->
+<!--                app:valueSize="35.0sp"-->
+<!--                app:dialWidth="2.0dip"-->
+<!--                app:dialIntervalDegree="3" />-->
+        </LinearLayout>
+        <View
+            android:background="#ff000000"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_below="@+id/ll_content" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_main_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/ll_left"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <TextView
+                    android:textSize="25.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:id="@+id/tv_left_top"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="行走距离" />
+                <TextView
+                    android:textSize="20.0sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff000000"
+                    android:id="@+id/tv_left_bottom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1.5km" />
+            </LinearLayout>
+            <View
+                android:background="#ff000000"
+                android:layout_width="1.0dip"
+                android:layout_height="70.0dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/ll_center"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <TextView
+                    android:textSize="25.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:id="@+id/tv_center_top"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="活跃等级" />
+                <TextView
+                    android:textSize="20.0sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff000000"
+                    android:id="@+id/tv_center_bottom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="中等活跃" />
+            </LinearLayout>
+            <View
+                android:background="#ff000000"
+                android:layout_width="1.0dip"
+                android:layout_height="70.0dip" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/ll_right"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+                <TextView
+                    android:textSize="25.0sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:id="@+id/tv_right_top"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="消耗能量" />
+                <TextView
+                    android:textSize="20.0sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff000000"
+                    android:id="@+id/tv_right_bottom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="238.9cal" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:background="#ff000000"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_below="@+id/ll_main_bottom" />
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/ll_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_main_bottom"
+            android:layout_alignParentLeft="true">
+            <Button
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="#ffffff00"
+                android:gravity="center"
+                android:id="@+id/bt_start"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estart" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_listView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_button">
+            <ListView
+                android:id="@+id/lv_step_count"
+                android:layout_width="fill_parent"
+                android:layout_height="30.0dip" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_lv_history"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_listView">
+            <ListView
+                android:id="@+id/lv_main_history"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

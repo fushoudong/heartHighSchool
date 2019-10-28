@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/black">
+    <!--顶部标题导航-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#173070"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_clipBack"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/btn_back_white"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="-90dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/bg_white"
+            android:text="移动和缩放"/>
+    </LinearLayout>
+
+    <!--中间截取区域-->
+    <!--圆形区域
+        app:clipBorderWidth="2dp"           裁剪框边框宽度
+        app:clipType="circle"               裁剪框类型为圆形
+        app:mHorizontalPadding="30dp"       裁剪框距离左右边距为30dp
+    -->
+    <com.bupt.heartarea.view.ClipViewLayout
+        android:id="@+id/cvl_circle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:clipBorderWidth="2dp"
+        app:clipType="circle"
+        app:mHorizontalPadding="30dp"/>
+
+    <!--矩形区域-->
+    <com.bupt.heartarea.view.ClipViewLayout
+        android:id="@+id/cvl_rectangle"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:clipType="rectangle"
+        app:clipBorderWidth="2dp"
+        app:mHorizontalPadding="30dp">
+
+    </com.bupt.heartarea.view.ClipViewLayout>
+
+    <!--底部取消确定栏-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal">4
+
+        <TextView
+            android:id="@+id/tv_clipCancel"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:text="取消"
+            android:textAlignment="center"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_clipSure"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:text="确定"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+</LinearLayout>

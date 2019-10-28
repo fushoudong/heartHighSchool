@@ -45,7 +45,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             />
-        </RelativeLayout>
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -53,15 +53,24 @@
         android:background="@drawable/user_bg">
 
         <com.bupt.heartarea.ui.RoundImageView
-            android:id="@+id/id_iv_headpicture_change_information"
+            android:visibility="gone"
+            android:id="@+id/id_iv_headpicture_change_information1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerInParent="true"
             android:layout_marginLeft="20dp"
             android:src="@drawable/user_image" />
+        <com.bupt.heartarea.view.CircleImageView
+            android:id="@+id/id_iv_headpicture_change_information"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/wechat" />
 
         <com.bupt.heartarea.ui.RoundImageView
             android:layout_width="wrap_content"
+            android:visibility="gone"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/id_iv_headpicture_change_information"
             android:layout_alignRight="@id/id_iv_headpicture_change_information"

@@ -1,5 +1,6 @@
 package com.bupt.heartarea.activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -7,21 +8,27 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,9 +47,13 @@ import com.bupt.heartarea.utils.Constants;
 import com.bupt.heartarea.utils.FileUtil;
 import com.bupt.heartarea.utils.FileUtils;
 import com.bupt.heartarea.utils.GlobalData;
+import com.bupt.heartarea.view.CircleImageView;
 import com.google.gson.Gson;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -59,6 +70,7 @@ import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 
+import static com.bupt.heartarea.utils.FileUtil.getRealFilePathFromUri;
 import static java.lang.String.valueOf;
 import static okhttp3.MultipartBody.FORM;
 
@@ -66,7 +78,6 @@ import static okhttp3.MultipartBody.FORM;
 public class MyInformationActivity extends Activity implements View.OnClickListener {
 
 
-    ImageView mHeadPicture;
     ImageView mBackIcon;
     TextView mSave, mTvSex, mTvBirthday;
     EditText mEtName, mEtEmail;
@@ -78,18 +89,8 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
     private String mName;
     private String mEmail;
 
-
     // 弹窗item
-    private String[] items_photo = new String[]{"从相册中选择", "拍照"};
     private String[] items_sex = new String[]{"男", "女"};
-
-    private File tempFile = new File(Environment.getExternalStorageDirectory(), getPhotoFileName());
-    private File cameraFile = new File(FileUtils.checkDirPath(Constants.TEMP_FILE_PATH), Constants.CAMERA_CACHE_FILE_NAME);
-
-    // 请求码
-    private static final int IMAGE_REQUEST_CODE = 0;// 打开相册请求码
-    private static final int CAMERA_REQUEST_CODE = 1;// 拍照请求码
-    private static final int RESULT_REQUEST_CODE = 2;// 结果请求码
 
     // 用户缓存
     private SharedPreferences preferences;
@@ -97,6 +98,29 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
     // 上传用户头像的url
     private static final String URL_IMAGE_HEAD = GlobalData.URL_HEAD + "/detect3/HeadIconServlet";
     private static final String URL_BASE = "http://47.92.80.155/";
+
+    //修改头像
+    //请求相机
+    private static final int REQUEST_CAPTURE = 100;
+    //请求相册
+    private static final int REQUEST_PICK = 101;
+    //请求截图
+    private static final int REQUEST_CROP_PHOTO = 102;
+    //请求访问外部存储
+    private static final int READ_EXTERNAL_STORAGE_REQUEST_CODE = 103;
+    //请求写入外部存储
+    private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 104;
+    //头像1
+    private CircleImageView headImage;
+    //头像2
+    private ImageView headImage2;
+    //调用照相机返回图片文件
+    private File tempFile;
+    // 1: qq, 2: weixin
+    private int type = 1;
+    private Bitmap mainBitmap;
+
+    private String TAG = getClass().getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +131,17 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
         mActivity = this;
         initView();
 
+        try {
+            FileInputStream in = new FileInputStream("/data/user/0/com.bupt.heartarealinear/files/icon.jpg");
+            Bitmap getBitmap = BitmapFactory.decodeStream(in);
+            headImage.setImageBitmap(getBitmap);
+            mainBitmap = getBitmap;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        SharedPreferences preferences = getSharedPreferences("data",MODE_PRIVATE);
+        String getEmail = preferences.getString("email","");
+        mEtEmail.setText(getEmail);
 
         //透明状态栏
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -115,18 +150,10 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
     }
 
     private void initView() {
-        mHeadPicture = (ImageView) findViewById(R.id.id_iv_headpicture_change_information);
-
-        String filepath = Environment.getExternalStorageDirectory() + "/Download/" + getPhotoFileName();
-        Log.i("filepath", filepath);
-        Bitmap photo = FileUtil.readImageFromLocal(filepath);
-//        Bitmap photo = FileUtil.readImageFromLocal(mContext, getPhotoName());
-        if (photo != null) {
-            mHeadPicture.setImageBitmap(photo);
-        } else {
-            mHeadPicture.setImageResource(R.drawable.user_image);
-        }
-
+        /**
+         * 更换头像
+         */
+        headImage = (CircleImageView) findViewById(R.id.id_iv_headpicture_change_information);
         mBackIcon = (ImageView) findViewById(R.id.id_iv_back);
         mEtName = (EditText) findViewById(R.id.id_et_name_change_information);
         mEtEmail = (EditText) findViewById(R.id.id_et_email_value);
@@ -136,6 +163,7 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
         mRL_birthday = (RelativeLayout) findViewById(R.id.id_rl_birthday);
         mRL_sex = (RelativeLayout) findViewById(R.id.id_rl_sex);
 
+
         mEtName.setText(GlobalData.getUsername());
         mEtEmail.setText(GlobalData.getEmail());
         if (GlobalData.getSex() != -1) {
@@ -143,8 +171,7 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
 
         }
         mTvBirthday.setText(GlobalData.getBirthday());
-
-        mHeadPicture.setOnClickListener(this);
+        headImage.setOnClickListener(this);
         mBackIcon.setOnClickListener(this);
         mEtName.setOnClickListener(this);
         mEtEmail.setOnClickListener(this);
@@ -158,7 +185,7 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
 
         switch (v.getId()) {
             case R.id.id_iv_headpicture_change_information:
-                showPhotoDialog();
+                uploadHeadImage();
                 break;
             case R.id.id_iv_back:
                 finish();
@@ -183,10 +210,36 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
                 if (mTvBirthday.getText().toString() == null || mTvBirthday.getText().toString().equals("")) {
                     Toast.makeText(MyInformationActivity.this, "请选择您的生日", Toast.LENGTH_SHORT).show();
                     break;
-                }
-
-
+                }if (!mEtEmail.getText().toString().toString().matches
+                    ("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*")){
+                Toast.makeText(MyInformationActivity.this,"邮箱格式不正确",Toast.LENGTH_SHORT).show();
+            }else {
                 saveToSever();
+                saveData(mEtEmail.getText().toString());
+                Log.e(TAG, "onActivityResult: "+mainBitmap);
+                try {
+                    File file = new File(getFilesDir(),"icon.jpg");
+                    Log.e(TAG, "onClick: "+file);
+                    if (file.exists()){
+                        file.delete();
+                        Log.e(TAG, "onClick: "+"删除成功" );
+                    }
+                    FileOutputStream out = new FileOutputStream(file);
+                    Log.e(TAG, "onClick: "+"输出流创建成功" );
+                    mainBitmap.compress(Bitmap.CompressFormat.JPEG,100,out);
+                    Log.e(TAG, "onClick: "+"压缩成功" );
+                    out.flush();
+                    Log.e(TAG, "onClick: "+"创建成功" );
+                    out.close();
+                    Log.e(TAG, "onClick: "+"关闭成功" );
+                    //保存图片后发送广播通知更新数据库
+                    Uri uri1 = Uri.fromFile(file);
+                    sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri1));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }}
                 final HashMap<String, String> params = new HashMap<>();
                 params.put("userid", GlobalData.userid + "");
 
@@ -221,6 +274,186 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
         }
     }
 
+    private void saveData(String email) {
+        SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE).edit();
+        editor.putString("email",email);
+        editor.commit();
+    }
+
+    /**
+     * 本地修改头像
+     */
+    /**
+     * 上传头像
+     */
+    private void uploadHeadImage() {
+        View view = LayoutInflater.from(this).inflate(R.layout.layout_popupwindow, null);
+        TextView btnCarema = (TextView) view.findViewById(R.id.tv_camera);
+        TextView btnPhoto = (TextView) view.findViewById(R.id.tv_album);
+        TextView btnCancel = (TextView) view.findViewById(R.id.tv_cancel);
+        final PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow.setBackgroundDrawable(getResources().getDrawable(android.R.color.transparent));
+        popupWindow.setOutsideTouchable(true);
+        View parent = LayoutInflater.from(this).inflate(R.layout.activity_main, null);
+        popupWindow.showAtLocation(parent, Gravity.BOTTOM, 0, 0);
+        //popupWindow在弹窗的时候背景半透明
+        final WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.alpha = 0.5f;
+        getWindow().setAttributes(params);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                params.alpha = 1.0f;
+                getWindow().setAttributes(params);
+            }
+        });
+
+        btnCarema.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //权限判断
+                if (ContextCompat.checkSelfPermission(MyInformationActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    //申请WRITE_EXTERNAL_STORAGE权限
+                    ActivityCompat.requestPermissions(MyInformationActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
+                } else {
+                    //跳转到调用系统相机
+                    gotoCamera();
+                }
+                popupWindow.dismiss();
+            }
+        });
+        btnPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //权限判断
+                if (ContextCompat.checkSelfPermission(MyInformationActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    //申请READ_EXTERNAL_STORAGE权限
+                    ActivityCompat.requestPermissions(MyInformationActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                            READ_EXTERNAL_STORAGE_REQUEST_CODE);
+                } else {
+                    //跳转到相册
+                    gotoPhoto();
+                }
+                popupWindow.dismiss();
+            }
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+    }
+
+
+    /**
+     * 外部存储权限申请返回
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == WRITE_EXTERNAL_STORAGE_REQUEST_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission Granted
+                gotoCamera();
+            }
+        } else if (requestCode == READ_EXTERNAL_STORAGE_REQUEST_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission Granted
+                gotoPhoto();
+            }
+        }
+    }
+
+
+    /**
+     * 跳转到相册
+     */
+    private void gotoPhoto() {
+        Log.d("evan", "*****************打开图库********************");
+        //跳转到调用系统图库
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(Intent.createChooser(intent, "请选择图片"), REQUEST_PICK);
+    }
+
+
+    /**
+     * 跳转到照相机
+     */
+    private void gotoCamera() {
+        Log.d("evan", "*****************打开相机********************");
+        //创建拍照存储的图片文件
+        tempFile = new File(FileUtil.checkDirPath(Environment.getExternalStorageDirectory().getPath() + "/image/"), System.currentTimeMillis() + ".jpg");
+        Log.e(TAG, "gotoCamera: "+tempFile.getName());
+        //跳转到调用系统相机
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            //设置7.0中共享文件，分享路径定义在xml/file_paths.xml
+            intent.setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            Uri contentUri = FileProvider.getUriForFile(MyInformationActivity.this, BuildConfig.APPLICATION_ID + ".fileProvider", tempFile);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
+        } else {
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(tempFile));
+        }
+        startActivityForResult(intent, REQUEST_CAPTURE);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        switch (requestCode) {
+            case REQUEST_CAPTURE: //调用系统相机返回
+                if (resultCode == RESULT_OK) {
+                    gotoClipActivity(Uri.fromFile(tempFile));
+                }
+                break;
+            case REQUEST_PICK:  //调用系统相册返回
+                if (resultCode == RESULT_OK) {
+                    Uri uri = intent.getData();
+                    gotoClipActivity(uri);
+                }
+                break;
+            case REQUEST_CROP_PHOTO:  //剪切图片返回
+                if (resultCode == RESULT_OK) {
+                    final Uri uri = intent.getData();
+                    if (uri == null) {
+                        return;
+                    }
+                    String cropImagePath = getRealFilePathFromUri(getApplicationContext(), uri);
+                    Bitmap bitMap = BitmapFactory.decodeFile(cropImagePath);
+                    if (type == 1) {
+                        headImage.setImageBitmap(bitMap);
+                    } else {
+                        headImage2.setImageBitmap(bitMap);
+                    }
+                    //此处后面可以将bitMap转为二进制上传后台网络
+                    //......
+                    mainBitmap = bitMap;
+
+                }
+                break;
+        }
+    }
+
+
+    /**
+     * 打开截图界面
+     */
+    public void gotoClipActivity(Uri uri) {
+        if (uri == null) {
+            return;
+        }
+        Intent intent = new Intent();
+        intent.setClass(this, ClipImageActivity.class);
+        intent.putExtra("type", 1);
+        intent.setData(uri);
+        startActivityForResult(intent, REQUEST_CROP_PHOTO);
+    }
+
+
     /**
      * 使用系统当前日期加以调整作为照片的名称
      *
@@ -233,107 +466,6 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
         return GlobalData.userid + ".jpg";
     }
 
-    /**
-     * 调用系统裁剪功能：
-     *
-     * @param fromFile
-     */
-    private void startPhotoZoom(Uri fromFile) {
-        Intent intent = new Intent("com.android.camera.action.CROP");
-        intent.setDataAndType(fromFile, "image/*");
-        // crop为true是设置在开启的intent中设置显示的view可以剪裁
-        intent.putExtra("crop", "true");
-
-        // aspectX aspectY 是宽高的比例
-        intent.putExtra("aspectX", 1);
-        intent.putExtra("aspectY", 1);
-
-        // outputX,outputY 是剪裁图片的宽高
-        intent.putExtra("outputX", 300);
-        intent.putExtra("outputY", 300);
-        intent.putExtra("return-data", true);
-        intent.putExtra("noFaceDetection", true);
-        startActivityForResult(intent, RESULT_REQUEST_CODE);
-    }
-
-    /**
-     * 保存裁剪后的图片
-     *
-     * @param data
-     */
-    private void sentPicToNext(Intent data) {
-        Bundle extras = data.getExtras();
-        if (extras != null) {
-            Bitmap photo = extras.getParcelable("data");
-            mHeadPicture.setImageBitmap(photo);
-            FileUtil.saveImageToLocal(MyInformationActivity.this, photo, getPhotoFileName());
-        }
-    }
-
-
-    /**
-     * 弹出选项窗口方法
-     */
-    private void showPhotoDialog() {
-        new AlertDialog.Builder(this)
-                .setTitle("设置头像")
-                .setItems(items_photo, new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface arg0, int which) {
-                        switch (which) {
-                            case 0:
-                                // 从相册中选择
-                                Intent intentFromImage = new Intent();
-                                intentFromImage.setType("image/*");
-                                intentFromImage.setAction(Intent.ACTION_GET_CONTENT);
-                                startActivityForResult(intentFromImage, IMAGE_REQUEST_CODE);
-                                break;
-                            case 1:
-                                // 拍照
-//                                Intent intentFromCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                                if (Tools.hasSdcard()) {
-//                                    // 指定调用相机拍照后照片的储存路径
-////                                    intentFromCamera.putExtra(
-////                                            MediaStore.EXTRA_OUTPUT,
-////                                            Uri.fromFile(tempFile));
-//
-//                                    ContentValues contentValues = new ContentValues(1);
-//                                    contentValues.put(MediaStore.Images.Media.DATA, tempFile.getAbsolutePath());
-//                                    Uri uri = getApplicationContext().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
-//                                    intentFromCamera.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-//                                }
-//
-//                                startActivityForResult(intentFromCamera,
-//                                        CAMERA_REQUEST_CODE);
-
-                                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                                判断是否是AndroidN以及更高的版本
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                    intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                                    Uri contentUri = FileProvider.getUriForFile(getApplicationContext(),
-                                            BuildConfig.APPLICATION_ID + ".fileProvider", cameraFile);
-                                    intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
-                                } else {
-                                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(cameraFile));
-                                }
-                                startActivityForResult(intent, CAMERA_REQUEST_CODE);
-//                                PhotoUtil.goToCamera(MyInformationActivity.this,CAMERA_REQUEST_CODE);
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                })
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        // 隐藏对话框,释放对话框所占的资源
-                        arg0.dismiss();
-                    }
-                }).show();
-    }
 
     /**
      * 弹出选项窗口方法
@@ -367,36 +499,6 @@ public class MyInformationActivity extends Activity implements View.OnClickListe
                 }).show();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case IMAGE_REQUEST_CODE:
-                if (data != null) {
-                    startPhotoZoom(data.getData());
-                }
-                break;
-            case CAMERA_REQUEST_CODE:
-                //判断是否是AndroidN以及更高的版本
-                Uri contentUri;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    contentUri = FileProvider.getUriForFile(getApplicationContext(),
-                            BuildConfig.APPLICATION_ID + ".fileProvider", cameraFile);
-                } else {
-                    contentUri = Uri.fromFile(cameraFile);
-                }
-                if (contentUri != null)
-                    startPhotoZoom(contentUri);
-                break;
-            case RESULT_REQUEST_CODE:
-                if (data != null) {
-                    sentPicToNext(data);
-                }
-                break;
-            default:
-                break;
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
     //         对话框下的DatePicker示例 Example in dialog
     private void showDatePickerDialog() {
