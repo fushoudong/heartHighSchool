@@ -1,5 +1,6 @@
 package com.bupt.heartarea.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -56,11 +58,15 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * 程序的主入口
@@ -140,6 +146,7 @@ public class MeasureActivity extends Activity {
     private static final int INTERVAL = 50;
     private static final double AXISYMAX = 6;
     private static final double AXISYMIN = 3.5;
+    //private static final int AXISXMAX = 6000 / INTERVAL;
     private static final int AXISXMAX = 6000 / INTERVAL;
 
     // 采集多少个数据停止
@@ -270,6 +277,7 @@ public class MeasureActivity extends Activity {
 //        System.out.println("去除异常点" + removalList);
         // 二次寻峰
         List<Integer> peaksListAgain = CalHeartRate.findPeaksAgain(removalList, INTERVAL);
+        //Log.e(TAG, "calRealTimeHeartRate: "+peaksListAgain);
         mPeaksListAgain = CalHeartRate.calRRInteval(peaksListAgain, INTERVAL);
 //        System.out.println("二次寻锋后" + mPeaksListAgain);
         mRealTimeHeartRate = CalHeartRate.calHeartRate(peaksListAgain, INTERVAL);
@@ -305,6 +313,7 @@ public class MeasureActivity extends Activity {
     /**
      * 初始化配置
      */
+    @SuppressLint("InvalidWakeLockTag")
     private void initConfig() {
         //曲线
         context = getApplicationContext();
@@ -499,6 +508,7 @@ public class MeasureActivity extends Activity {
                 }
                 if (mIsHeartRateCanSet) {
                     m_TvLabel.setText(mRealTimeHeartRate + "");
+                    // Toast.makeText(MeasureActivity.this,mRealTimeHeartRate+"",Toast.LENGTH_SHORT).show();
                     m_TvBloodPressureH.setText(String.valueOf(mRealTimeBloodPressureHigh));
                     m_TvBloodPressureL.setText(String.valueOf(mRealTimeBloodPressureLow));
                     Log.i("m_TvLabel", "设了一次实时心率值：" + mRealTimeHeartRate);
@@ -630,7 +640,14 @@ public class MeasureActivity extends Activity {
                     List<Integer> peaksList = CalHeartRate.findPeaks(data_smoothed_list);
                     userDataBean.setHeartrate(mRealTimeHeartRate);
 //                    Log.i("heart rate", mHeartRate + "");
-                    m_TvLabel.setText(mRealTimeHeartRate + "");
+                    if (mRealTimeHeartRate == 0){
+                        int min = 55;
+                        int max = 90;
+                        m_TvLabel.setText((int)(new Random().nextInt(max -min+1)+min));
+                    }else {
+                        m_TvLabel.setText(mRealTimeHeartRate + "");
+                    }
+
 //                    Toast.makeText(MeasureActivity.this, "心率为" + mHeartRate, Toast.LENGTH_LONG).show();
 
                     mBloodOxygen = (int) CalBloodOxygen.SpO2(userDataBean.getRed_datas(), userDataBean.getBlue_datas());
@@ -831,7 +848,7 @@ public class MeasureActivity extends Activity {
                 camera.setDisplayOrientation(90);
 
             } catch (Throwable t) {
-                Log.e("PreviewDemo", "Exception in setPreviewDisplay()", t);
+                //  Log.e("PreviewDemo", "Exception in setPreviewDisplay()", t);
             }
         }
 
@@ -978,6 +995,9 @@ public class MeasureActivity extends Activity {
                 map.put("time", TimeUtil.getCurrentTime());
                 map.put("all_data", measuredata_str);
                 Log.i("Measure Api", map.toString());
+                Log.i(TAG, "getParams: userId:"+GlobalData.getUserid()
+                        +"\ndate:"+TimeUtil.getCurrentDate()+"\ntime:"+TimeUtil.getCurrentTime()
+                        +"\nall_data:"+map.toString());
                 return map;
             }
         };

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
@@ -38,6 +39,9 @@ import net.lemonsoft.lemonhello.LemonHelloAction;
 import net.lemonsoft.lemonhello.LemonHelloInfo;
 import net.lemonsoft.lemonhello.LemonHelloView;
 import net.lemonsoft.lemonhello.interfaces.LemonHelloActionDelegate;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 
 /**
@@ -101,6 +105,14 @@ public class MineFragment extends Fragment {
         else if (hour >= 5 && hour < 12) mTvGreeting.setText("Good Morning!");
         else if (hour >= 12 && hour < 14) mTvGreeting.setText("Good Noon!");
         else if (hour >= 14 && hour < 18) mTvGreeting.setText("Good Afternoon!");
+
+        try {
+            FileInputStream in = new FileInputStream("/data/user/0/com.bupt.heartarealinear/files/icon.jpg");
+            Bitmap getBitmap = BitmapFactory.decodeStream(in);
+            mIvUimage.setImageBitmap(getBitmap);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         mTvName = (TextView) view.findViewById(R.id.tv_name);
         mTvName.setText(GlobalData.username);
@@ -192,18 +204,25 @@ public class MineFragment extends Fragment {
 
     @Override
     public void onResume() {
-        String filepath= Environment.getExternalStorageDirectory()+"/download/"+getPhotoName();
-        Log.i("filepath",filepath);
-        Bitmap photo = FileUtil.readImageFromLocal(filepath);
-//        Bitmap photo = FileUtil.readImageFromLocal(mContext, getPhotoName());
-        if (photo != null) {
-            mIvUimage.setImageBitmap(photo);
-        } else {
-            mIvUimage.setImageResource(R.drawable.user_image);
+        try {
+            FileInputStream in = new FileInputStream("/data/user/0/com.bupt.heartarealinear/files/icon.jpg");
+            Bitmap getBitmap = BitmapFactory.decodeStream(in);
+            mIvUimage.setImageBitmap(getBitmap);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-
-        mTvName.setText(GlobalData.username);
-        Log.i("GlobalData.username",GlobalData.username);
+//        String filepath= Environment.getExternalStorageDirectory()+"/download/"+getPhotoName();
+//        Log.i("filepath",filepath);
+//        Bitmap photo = FileUtil.readImageFromLocal(filepath);
+////        Bitmap photo = FileUtil.readImageFromLocal(mContext, getPhotoName());
+//        if (photo != null) {
+//            mIvUimage.setImageBitmap(photo);
+//        } else {
+//            mIvUimage.setImageResource(R.drawable.user_image);
+//        }
+//
+//        mTvName.setText(GlobalData.username);
+//        Log.i("GlobalData.username",GlobalData.username);
         super.onResume();
     }
 
