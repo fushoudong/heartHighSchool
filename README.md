@@ -1,2 +1,2 @@
 # NewHeartArea
-> 心域主分支，上传的名称为heart
+> 心域主分支，远程仓库的名称为heart
