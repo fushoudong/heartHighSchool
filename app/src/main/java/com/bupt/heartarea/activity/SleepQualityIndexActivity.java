@@ -42,20 +42,20 @@ public class SleepQualityIndexActivity extends Activity {
     private int partG1;
     private int partG2;
     private String[] rb_selected;
-    private String rb_selected5a;
-    private String rb_selected5b;
-    private String rb_selected5c;
-    private String rb_selected5d;
-    private String rb_selected5e;
-    private String rb_selected5f;
-    private String rb_selected5g;
-    private String rb_selected5h;
-    private String rb_selected5i;
-    private String rb_selected5j;
-    private String rb_selected6;
-    private String rb_selected7;
-    private String rb_selected8;
-    private String rb_selected9;
+    private String rb_selected5a = "0";
+    private String rb_selected5b = "0";
+    private String rb_selected5c = "0";
+    private String rb_selected5d = "0";
+    private String rb_selected5e = "0";
+    private String rb_selected5f = "0";
+    private String rb_selected5g = "0";
+    private String rb_selected5h = "0";
+    private String rb_selected5i = "0";
+    private String rb_selected5j = "0";
+    private String rb_selected6 = "0";
+    private String rb_selected7 = "0";
+    private String rb_selected8 = "0";
+    private String rb_selected9 = "0";
     private RadioButton[] rb_sleep_quality1;
     private RadioButton[] rb_sleep_quality2;
     private RadioButton[] rb_sleep_quality3;
@@ -117,10 +117,10 @@ public class SleepQualityIndexActivity extends Activity {
     private RadioButton rb_sleep_quality_93;
     private RadioButton rb_sleep_quality_94;
     private int sleep_quality_score = 0;
-    private String str1;
-    private String str2;
-    private String str3;
-    private String str4;
+    private String str1  = "0";
+    private String str2  = "0";
+    private String str3  = "0";
+    private String str4  = "0";
     private TextView tv_sleep_day;
     private TextView tv_sleep_final;
     private TextView tv_sleep_in_time;
@@ -242,6 +242,14 @@ public class SleepQualityIndexActivity extends Activity {
                     rb_sleep_quality4[b].setChecked(true);
                 }
             }
+        }else {
+            et_qs1.setText("0");
+            et_qs2.setText("0");
+            et_qs3.setText("0");
+            et_qs4.setText("0");
+            for (b = 0; b < 14; b++) {
+                    rb_sleep_quality1[b].setChecked(true);
+            }
         }
     }
 
@@ -269,6 +277,7 @@ public class SleepQualityIndexActivity extends Activity {
                 str4 = et_qs4.getText().toString();
 
                 for(int i = 0 ;i < 14 ;i ++){
+                    Log.e(TAG, "exception: "+rb_selected[i]);
                     if (rb_selected[i].equals("null")){
                         flag = false;
                         break;

@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/coreHeart.iml" filepath="$PROJECT_DIR$/coreHeart.iml" />
       <module fileurl="file://$PROJECT_DIR$/hellocharts-library/hellocharts-library.iml" filepath="$PROJECT_DIR$/hellocharts-library/hellocharts-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/segmentedbar/segmentedbar.iml" filepath="$PROJECT_DIR$/segmentedbar/segmentedbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/todaystepcounterlib/todaystepcounterlib.iml" filepath="$PROJECT_DIR$/todaystepcounterlib/todaystepcounterlib.iml" />
     </modules>
   </component>
 </project>

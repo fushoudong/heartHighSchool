@@ -643,6 +643,57 @@
                     android:layout_width="fill_parent"
                     android:layout_height="1.0dip" />
                 <LinearLayout
+                    android:id="@+id/ll_top"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_top">
+                    <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:id="@+id/tv_hour_main"
+                        android:layout_width="0.0dip"
+                        android:textAlignment="center"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:textSize="20sp"
+                        android:text="倒计时"/>
+
+                    <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:id="@+id/tv_minute_main"
+                        android:textAlignment="center"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0" />
+                    <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/maohao" />
+                    <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:id="@+id/tv_second_main"
+                        android:textAlignment="center"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0" />
+                    <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/point" />
+                    <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:id="@+id/tv_m_second_main"
+                        android:textAlignment="center"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0" />
+                </LinearLayout>
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip" />
+                <LinearLayout
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
@@ -667,10 +718,23 @@
                     android:textSize="17.0sp"
                     android:textColor="@android:color/black"
                     android:id="@+id/tv_step_number_result"
+                    android:textAlignment="center"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:text="还未测量"
                     android:layout_weight="1.0" />
+                <View
+                    android:background="@android:color/black"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent" />
+                <Button
+                    android:id="@+id/btn_stepStart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:textAlignment="center"
+                    android:background="@android:color/transparent"
+                    android:text="开始计步"/>
                 <View
                     android:background="@android:color/black"
                     android:layout_width="1.0dip"
@@ -685,6 +749,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
+                        android:visibility="gone"
                         android:gravity="center"
                         android:orientation="horizontal"
                         android:id="@+id/ll_expand_title"

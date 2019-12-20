@@ -167,6 +167,7 @@ public class LoginActivity extends Activity {
                                 saveAccountAndPwd();
 
                                 String jsonString = responseBean.getBody();
+                                Toast.makeText(LoginActivity.this,jsonString,Toast.LENGTH_SHORT).show();
                                 try {
                                     JSONObject jsonObject = new JSONObject(jsonString);
                                     if (jsonObject.has("username"))

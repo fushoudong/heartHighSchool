@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SelectActivity extends AppCompatActivity {
-    private static final String URL_GET = "http://47.92.80.155/detect3/InvesHighSchoolServlet";
+    private static final String URL_GET = "http://39.100.6.159:8080/detect3/InvesHighSchoolServlet";
     private static final String TAG = "SelectActivity";
     private String getAlls;
     private LinearLayout ll_eight_week;

@@ -1,12 +1,18 @@
 package com.bupt.heartarea.activity;
 
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.RemoteException;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
@@ -32,6 +38,9 @@ import com.bupt.heartarea.R;
 import com.bupt.heartarea.constants.Constants;
 import com.bupt.heartarea.helper.TipHelper;
 import com.bupt.heartarea.utils.GlobalData;
+import com.today.step.lib.ISportStepInterface;
+import com.today.step.lib.TodayStepManager;
+import com.today.step.lib.TodayStepService;
 
 import net.lemonsoft.lemonbubble.LemonBubble;
 
@@ -44,14 +53,12 @@ public class MainQSActivity extends Activity implements View.OnClickListener {
     private static final String KEY_STEP_NUMBER_LIST = "stepNumberList";
     private static final int MSG_WHAT_MARK = 3;
     private static final int MSG_WHAT_SHOW_TIME = 1;
-    private static final int REFRESH_STEP_WHAT = 0;
     private static final String URL_POST = "http://47.92.80.155/detect3/InvesHighSchoolUpdateServlet";
     private static final String[] step_numbers = {
             "5000", "5500", "6000", "6500", "7000", "7500", "8000", "8500", "9000", "9500",
             "10000", "10500", "11000", "11500", "12000", "12500", "13000", "13500", "14000", "14500",
             "15000", "15500", "16000", "16500", "17000", "17500", "18000", "18500", "19000", "19500",
             "20000" };
-    private long TIME_INTERVAL_REFRESH = 500L;
     private int after_step_number;
     private int before_step_number;
     private Button bt_start;
@@ -91,7 +98,6 @@ public class MainQSActivity extends Activity implements View.OnClickListener {
     private LinearLayout mExpandView;
     private NumberPicker mNumberPicker;
     private int mSelectedIndex;
-    private int mStepSum;
     private int max;
     private String medication_info;
     private TextView medication_status;
@@ -109,33 +115,93 @@ public class MainQSActivity extends Activity implements View.OnClickListener {
     private String self_evalution_info;
     private int self_evalution_score;
     private TextView self_evalution_status;
-    private TimerTask showTimerTask = null;
     private String sleep_quality_info;
     private int sleep_quality_score;
     private TextView sleep_quality_status;
-    private String steps;
-    private int tenMesc = 36000;
-    private Timer timer = new Timer();
-    private TimerTask timerTask = null;
     private String title = "";
     private HeartAreaApplication tsApplication;
     private TextView tv_com;
     private TextView tv_distance;
-    private TextView tv_energy;
-    private TextView tv_hour;
-    private TextView tv_level;
+
+    private String steps;
+    //private int tenMesc = 36000;
+    private int tenMesc = 6000;
+    private Timer timer = new Timer();
+    private TimerTask timerTask = null;
+    private TimerTask showTimerTask = null;
+    private TextView tv_hour_main;
     private TextView tv_main_title;
-    private TextView tv_minute;
-    private TextView tv_msecond;
-    private TextView tv_second;
+    private TextView tv_minute_main;
+    private TextView tv_msecond_main;
+    private TextView tv_second_main;
     private TextView tv_step_number;
-    private TextView tv_step_number_result;
+    private TextView btn_stepStart;
     String tx1;
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case MSG_WHAT_SHOW_TIME:
+                    //tv_hour_main.setText((tenMesc/100/60/60) + "");
+                    tv_minute_main.setText(tenMesc/100/60%60 + "");
+                    tv_second_main.setText(tenMesc/100 % 60 + "");
+                    tv_msecond_main.setText(tenMesc%100 + "");
+                    break;
+                case MSG_WHAT_MARK:
+                    try {
+                        after_step_number = iSportStepInterface.getCurrentTimeSportStep();
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    btn_stepStart.setEnabled(false);
+                    btn_stepStart.setBackgroundColor(Color.GRAY);
+                    btn_stepStart.setTextColor(Color.WHITE);
+                    btn_commit_main.setEnabled(true);
+                    btn_commit_main.setTextColor(Color.BLUE);
+                    tv_step_number_result.setText((after_step_number-before_step_number) + "步");
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+
+    //计步功能块
+    private static final int REFRESH_STEP_WHAT = 0;
+
+    //循环取当前时刻的步数中间的间隔时间
+    private long TIME_INTERVAL_REFRESH = 500;
+    private Handler mDelayHandler = new Handler(new TodayStepCounterCall());
+    private int mStepSum;
+    private TextView tv_step_number_result;
+    private ISportStepInterface iSportStepInterface;
     private static final String TAG = "MainQSActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qs_main);
+        //初始化计步模块
+        TodayStepManager.init(getApplication());
+        //开启Service服务，同时绑定Activity进行aidl通信
+        Intent intent = new Intent(this, TodayStepService.class);
+        startService(intent);
+        bindService(intent, new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                //Activity和Service通过aidl进行通信
+                iSportStepInterface = ISportStepInterface.Stub.asInterface(service);
+                try{
+                    mStepSum = iSportStepInterface.getCurrentTimeSportStep();
+                }catch (RemoteException e){
+                    e.printStackTrace();
+                }
+                mDelayHandler.sendEmptyMessageDelayed(REFRESH_STEP_WHAT, TIME_INTERVAL_REFRESH);
+            }
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+
+            }
+        }, Context.BIND_AUTO_CREATE);
         initView();
         initEvent();
     }
@@ -151,24 +217,23 @@ public class MainQSActivity extends Activity implements View.OnClickListener {
         ll_self_activity = (LinearLayout)findViewById(R.id.ll_self);
         tv_step_number_result = (TextView)findViewById(R.id.tv_step_number_result);
         mExpandView = (LinearLayout)findViewById(R.id.expand);
-        //dialProgress = (DialProgress)findViewById(R.id.);
         tv_distance = (TextView)findViewById(R.id.tv_left_bottom);
-        tv_level = (TextView)findViewById(R.id.tv_center_bottom);
-        tv_energy = (TextView)findViewById(R.id.tv_right_bottom);
+
         tsApplication = (HeartAreaApplication)getApplication();
 //        TodayStepManager.init(getApplication());
        // tv_step_number = (TextView)findViewById(R.id.tv_step_number_result);
         //StartService();
-        tv_hour = (TextView)findViewById(R.id.tv_hour);
-        tv_minute = (TextView)findViewById(R.id.tv_minute);
-        tv_second = (TextView)findViewById(R.id.tv_second);
-        tv_msecond = (TextView)findViewById(R.id.tv_m_second);
+        tv_hour_main = (TextView)findViewById(R.id.tv_hour_main);
+        tv_minute_main = (TextView)findViewById(R.id.tv_minute_main);
+        tv_second_main = (TextView)findViewById(R.id.tv_second_main);
+        tv_msecond_main = (TextView)findViewById(R.id.tv_m_second_main);
         tv_com = (TextView)findViewById(R.id.tv_com);
-        bt_start = (Button)findViewById(R.id.bt_start);
-//        showTimerTask = new TimerTask() {
-//            public void run() { MainQSActivity.handler.sendEmptyMessage(1); }
-//        };
-        //timer.schedule(showTimerTask, 200L, 200L);
+        btn_stepStart = (Button)findViewById(R.id.btn_stepStart);
+        showTimerTask = new TimerTask() {
+            public void run() {
+                handler.sendEmptyMessage(MSG_WHAT_SHOW_TIME); }
+        };
+        timer.schedule(showTimerTask, 200L, 200L);
         tv_main_title = (TextView)findViewById(R.id.tv_main_title_qs);
         title = "基本信息情况(" + Constants.getWeeks() + ")";
         tv_main_title.setText(title);
@@ -272,6 +337,13 @@ public class MainQSActivity extends Activity implements View.OnClickListener {
                 setJSON3();
             }
         });
+        btn_stepStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startTimer();
+                btn_stepStart.setEnabled(false);
+            }
+        });
     }
 
 
@@ -353,30 +425,36 @@ public class MainQSActivity extends Activity implements View.OnClickListener {
         paramEditText.setFocusableInTouchMode(false);
     }
 
-//    private void startTimer() {
-//        Log.i(TAG, "startTimer: ");
-//        this.btn_commit_main.setEnabled(false);
-//        this.btn_commit_main.setTextColor(-7829368);
-//        if (this.timerTask == null) {
-//            this.timerTask = new TimerTask() {
-//                public void run() {
-//                    if (MainQSActivity.this.tenMesc == 0)
-//                        MainQSActivity.this.stopTimer();
-//                }
-//            };
-//            this.timer.schedule(this.timerTask, 10L, 10L);
-//        }
-//    }
+    private void startTimer() {
+        Log.i(TAG, "startTimer: ");
+        btn_commit_main.setEnabled(false);
+        btn_commit_main.setTextColor(-7829368);
+        try {
+            before_step_number = iSportStepInterface.getCurrentTimeSportStep();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        if (timerTask == null) {
+            timerTask = new TimerTask() {
+                public void run() {
+                    tenMesc--;
+                    if (tenMesc == 0)
+                        stopTimer();
+                }
+            };
+            timer.schedule(timerTask, 10L, 10L);
+        }
+    }
 
-//    private void stopTimer() {
-//        this.handler.sendEmptyMessage(3);
-//        Log.i(TAG, "stopTimer: ");
-//        if (this.timerTask != null) {
-//            this.tenMesc = 36000;
-//            this.timerTask.cancel();
-//            this.timerTask = null;
-//        }
-//    }
+    private void stopTimer() {
+        handler.sendEmptyMessage(MSG_WHAT_MARK);
+        Log.i(TAG, "stopTimer: ");
+        if (timerTask != null) {
+            tenMesc = 36000;
+            timerTask.cancel();
+            timerTask = null;
+        }
+    }
 
 //    private void updateStepCount() {
 //        Log.e(TAG, "updateStepCount: " + this.mStepSum);
@@ -581,29 +659,34 @@ public class MainQSActivity extends Activity implements View.OnClickListener {
         tv_step_number_result.setText("共计" + Constants.getSteps() + "步");
     }
 //
-//    class TodayStepCounterCall implements Handler.Callback {
-//        public boolean handleMessage(Message param1Message) {
-//            switch (param1Message.what) {
-//                default:
-//                    return false;
-//                case 0:
-//                    break;
-//            }
-//            if (MainQSActivity.this.iSportStepInterface != null) {
-//                int i = 0;
-//                try {
-//                    int j = MainQSActivity.this.iSportStepInterface.getCurrentTimeSportStep();
-//                    i = j;
-//                } catch (RemoteException param1Message) {
-//                    param1Message.printStackTrace();
-//                }
-//                if (MainQSActivity.this.mStepSum != i) {
-//                    MainQSActivity.access$1802(MainQSActivity.this, i);
-//                    MainQSActivity.this.updateStepCount();
-//                }
-//            }
-//            MainQSActivity.this.mDelayHandler.sendEmptyMessageDelayed(0, MainQSActivity.this.TIME_INTERVAL_REFRESH);
-//            return false;
-//        }
-//    }
+    class TodayStepCounterCall implements Handler.Callback {
+    @Override
+    public boolean handleMessage(Message msg) {
+        switch (msg.what) {
+            case REFRESH_STEP_WHAT: {
+                //每隔500毫秒获取一次计步数据刷新UI
+                if (null != iSportStepInterface) {
+                    int step = 0;
+                    try {
+                        step = iSportStepInterface.getCurrentTimeSportStep();
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    if (mStepSum != step) {
+                        mStepSum = step;
+                        updateStepCount();
+                    }
+                }
+                mDelayHandler.sendEmptyMessageDelayed(REFRESH_STEP_WHAT, TIME_INTERVAL_REFRESH);
+
+                break;
+            }
+        }
+        return false;
+        }
+    }
+    private void updateStepCount() {
+        Log.e(TAG, "updateStepCount : " + mStepSum);
+
+    }
 }

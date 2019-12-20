@@ -21,12 +21,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\xinyu\coreHeart\app\libs\Jama-1.0.3.jar"
+        jar="D:\workspace\xinyu\coreHeart\hellocharts-library\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="4e7b3b81770450a21b4295e27c2ccb802ab537e1">
-        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\Jama-1.0.3_6c7db54d09584c0cf5f6e1cc3f12d9aa04ee71e3.jar" />
+        sha1="bbd3e1bfa973b65072cb0dd15c925243180fe5c5">
+        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\classes_4772ddc5d539164cb4c4b07bbc0c72c1df04e298.jar" />
     </item>
     <item
         is-multidex="false"
@@ -39,30 +39,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\workspace\xinyu\coreHeart\segmentedbar\build\intermediates\bundles\default\classes.jar"
+        jar="D:\workspace\xinyu\coreHeart\app\libs\Jama-1.0.3.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="a01df69ff14c752cd58366c242dd1d35351bea22">
-        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\classes_877441ca0448bf160a2c84063863662e9aafe460.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\xinyu\coreHeart\app\libs\achartengine-1.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b2bb0af9f390c0edd4d7d95f613f38da3abe0144">
-        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\achartengine-1.0.0_85f738e71471fd2d80830145803a2201044681d6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\workspace\xinyu\coreHeart\hellocharts-library\build\intermediates\bundles\default\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bbd3e1bfa973b65072cb0dd15c925243180fe5c5">
-        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\classes_4772ddc5d539164cb4c4b07bbc0c72c1df04e298.jar" />
+        sha1="4e7b3b81770450a21b4295e27c2ccb802ab537e1">
+        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\Jama-1.0.3_6c7db54d09584c0cf5f6e1cc3f12d9aa04ee71e3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,21 +57,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\Program\adt\adt-bundle-windows-x86_64-20140702\sdk\.android\build-cache\c0a7ce1a067307b3d953f8ec646eec72e39e83a6\output\jars\classes.jar"
+        jar="D:\workspace\xinyu\coreHeart\todaystepcounterlib\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="e921a3b8710529539fce1fef812f9626d8a6ecdb">
-        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\classes_fdee630b530c7230cc3d2bb359e04d5f5351b385.jar" />
+        sha1="85fe63fc930eb567449e15088255ed37153d6ee9">
+        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\classes_ce5c8b9ca36c21c7decccdd89991a82932e06be3.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Program\adt\adt-bundle-windows-x86_64-20140702\sdk\.android\build-cache\e66cf90db46d5f71c572b9dc374205aada7675d1\output\jars\classes.jar"
+        jar="D:\workspace\xinyu\coreHeart\segmentedbar\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="6a2bcb61342d09fe9acf55c9daf63961c8866cc0">
-        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\classes_70fdb87f4ecaa7f6303860a82d4e802bbc8939bf.jar" />
+        sha1="a01df69ff14c752cd58366c242dd1d35351bea22">
+        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\classes_877441ca0448bf160a2c84063863662e9aafe460.jar" />
     </item>
     <item
         is-multidex="false"
@@ -99,6 +81,15 @@
         revision="25.0.2"
         sha1="4877b85d388275f994a5cfc7eceb73a8045d3006">
         <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\commons-math-2.2_6073a671c79ce4cfd19a8cce9b6107f1c744b666.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\xinyu\coreHeart\app\libs\achartengine-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b2bb0af9f390c0edd4d7d95f613f38da3abe0144">
+        <dex dex="D:\workspace\xinyu\coreHeart\app\build\intermediates\pre-dexed\debug\achartengine-1.0.0_85f738e71471fd2d80830145803a2201044681d6.jar" />
     </item>
 
 </items>

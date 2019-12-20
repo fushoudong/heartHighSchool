@@ -18,7 +18,7 @@ public class GlobalData {
     public static int measure_state = 0;
     public static String userid = "2";
     public static String sid;
-    public static final String URL_HEAD = "http://47.92.80.155";
+    public static final String URL_HEAD = "http://39.100.6.159:8080";
     public static String tel;
     // 昵称
     public static String username;

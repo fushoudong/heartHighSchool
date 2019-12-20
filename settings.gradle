@@ -1,1 +1,1 @@
-include ':app', ':DatePicker', ':hellocharts-library', ':segmentedbar'
+include ':app', ':DatePicker', ':hellocharts-library', ':segmentedbar', ':todaystepcounterlib'
